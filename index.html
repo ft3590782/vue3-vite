@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="<%= VITE_APP_TITLE %>" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 一定要有清除浏览器缓存的meta标签,否则在钉钉4.6+的版本上会有无限loading的bug -->
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta http-equiv="Cache-Control" content="must-revalidate" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- 一定要有清除浏览器缓存的meta标签,否则在钉钉4.6+的版本上会有无限loading的bug -->
+    <title><%=VITE_APP_TITLE %></title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+
+    <% if(VITE_APP_MODE !== 'development' && VITE_APP_LIB_SCRIPT !=='') { %>
+    <script src="<%= VITE_APP_LIB_SCRIPT %>"></script>
+    <% } %>
+  </body>
+</html>
